@@ -13,17 +13,170 @@
 
 <body>
     <nav class="header">
-        <div class="bg-primary py-4">
+        <div class="bg-primary d-md-block d-none py-2">
 
         </div>
         <div class="header__top-bar">
-
+            <nav class="navbar navbar-dark justify-content-between">
+                <nav class="nav mx-md-0 mx-auto">
+                    <a class="nav-link" href="" uk-icon="facebook"></a>
+                    <a class="nav-link" href="" uk-icon="twitter"></a>
+                    <a class="nav-link" href="" uk-icon="dribbble"></a>
+                    <a class="nav-link" href="" uk-icon="linkedin"></a>
+                </nav>
+                <nav class="nav ml-auto mx-md-0 mx-auto">
+                    <a class="nav-link" href="#">REFER & EARN</a>
+                    <a class="nav-link" href="#">SELL ON PRINTARTO</a>
+                    <a class="nav-link p-1" href="" uk-icon="user"></a>
+                    <a class="nav-link" href="#">US | ENGLISH</a>
+                </nav>
+            </nav>
         </div>
-        <div class="header__search-bar">
-
+        <nav class="navbar navbar-expand-lg navbar-light pt-3 d-flex d-md-none">
+            <a class="navbar-brand" href="#"><img src="../assets/black.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Holiday Gift Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Best Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Best Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Subjects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Digital Art</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Wall Art</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Lifestyle</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="col d-md-none d-flex position-relative">
+            <input class="form-control mr-sm-2 search-box" type="search" placeholder="Search"
+                aria-label="Search">
+            <button class="search-btn" type="submit"><span uk-icon="search"></span></button>
         </div>
-        <div class="header__menu-bar">
+        <div class="header__search-bar border-bottom d-none d-md-block">
+            <nav class="navbar navbar-light justify-content-between">
+                <a class="navbar-brand"><img src="../assets/black.png" alt=""></a>
+                <div class="col d-lg-flex d-none position-relative">
+                    <input class="form-control mr-sm-2 search-box" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="search-btn" type="submit"><span uk-icon="search"></span></button>
+                </div>
+                <form class="form-inline header__search-bar--menu d-none d-md-block">
+                    <ul class="nav align-items-end">
+                        <li class="nav-item d-flex flex-wrap">
+                            <div class="mb-1 d-flex ">
+                                <a class="mb-1" href="" uk-icon="cart"></a>
+                                <span class="neo-round-box">0</span>
+                            </div>
+                        </li>
+                        <li class="nav-item d-flex flex-wrap">
+                            <div class="mb-1 d-flex">
+                                <a class="mb-1" href="" uk-icon="heart"></a>
+                                <span class="neo-round-box">0</span>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="wallet">
+                                <img class="mb-1" src="../assets/Icon ionic-md-wallet.svg" alt="">
+                                <div class="wallet__item">
+                                    <label for="exampleInputPassword1">DISCOUNT</label>
+                                    <input type="password" class="form-control pointer-none" id="exampleInputPassword1"
+                                        placeholder="$15,000">
+                                </div>
+                                <div class="wallet__item">
+                                    <label>CASH</label>
+                                    <input type="password" class="form-control pointer-none" id="exampleInputPassword1"
+                                        placeholder="$15,000">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary badge-pill small">Upload & Print</button>
+                        </li>
+                    </ul>
+                </form>
+            </nav>
+            <div class="col d-flex d-lg-none my-3 position-relative">
+                <input class="form-control mr-sm-2 search-box" type="search" placeholder="Search" aria-label="Search">
+                <button class="search-btn" type="submit"><span uk-icon="search"></span></button>
+            </div>
+        </div>
+        
+        <div class="header__menu-bar border-bottom d-none d-md-block">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Holiday Gift Ideas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Arrivals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Best Sellers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Arrivals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Best Sellers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Subjects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Digital Art</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Wall Art</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Lifestyle</a>
+                </li>
+            </ul>
+        </div>
 
+        <div class="header__mobile-menu">
+            <div class="col d-flex align-items-center">
+                <a href="" class="uk-icon-button mx-auto d-flex shadow bg-light" uk-icon="cart"></a>
+            </div>
+            <div class="col d-flex align-items-center">
+                <a href="" class="uk-icon-button mx-auto d-flex shadow bg-light" uk-icon="heart"></a>
+            </div>
+            <div class="col d-flex align-items-center">
+                <a href="" class="uk-icon-button mx-auto d-flex shadow bg-light p-2">
+                    <img src="../assets/Icon ionic-md-wallet.svg" alt="">
+                </a>
+            </div>
+            <div class="col d-flex align-items-center">
+                <a href="" class="uk-icon-button mx-auto d-flex shadow bg-light" uk-icon="cloud-upload"></a>
+            </div>
         </div>
     </nav>
 
@@ -31,11 +184,11 @@
     <section id="print__arto" class="printarto">
         <div class="container mx-auto h-full">
             <div class="printarto__container rounded h-full shadow">
-                <div class="w-full lg:w-1/2 px-3 bg-primary position-relative">
+                <div class="w-full lg:w-1/2 px-3 bg-primary position-relative printarto__pic-holder">
                     <div class="bg-placeholder"></div>
                 </div>
                 <div class="w-full lg:w-1/2 px-3 printarto__control">
-                    <label class="switch mb-4">
+                    <!-- <label class="switch mb-4">
                         <input id="switch__print" type="checkbox" value="true">
                         <span class="slider round">
                             <span class="slider__content">
@@ -44,7 +197,7 @@
                         </span>
                         <span class="lhs-name">NORMAL PRINT</span>
                         <span class="rhs-name">DIGITAL PRINT</span>
-                    </label>
+                    </label> -->
                     <div class="col-12 py-3">
                         <div class="drop__img">
                             <img class="drop__tumbnail" src="../assets/course-tumb 1.png" alt="">
@@ -161,7 +314,7 @@
     </section>
 
 
-    <div class="container text-center py-4 border-bottom">
+    <div class="container text-center py-4">
         <h3>WE HELP YOU TO TREASURE MEMORIES</h3>
         <p class="w-3/4 mx-auto mt-3 mb-5">
             We thrive to assist you in preserving your special moments forever. Our range of artistic collection
@@ -522,7 +675,7 @@
                                 <img class="rounded-img" src="../assets/avatar-2.jpg" alt="">
                             </div>
                             <div class="uk-card-body">
-                                
+
                                 <p>
                                     We thrive to assist you in preserving your special moments forever. Our range of
                                     artistic collection includes photo books, acrylic prints, metal prints, Photo
@@ -766,7 +919,9 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js"></script>
     <script src="../js/script.js"></script>
@@ -795,7 +950,12 @@
             document.getElementById(tabID).classList.add("block");
         }
     </script>
-    <script>
+
+
+
+
+    <!-- switch digital and photo -->
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const switcher = document.getElementById("switch__print");
             switcher.addEventListener("change", function (e) {
@@ -808,7 +968,7 @@
             });
         });
 
-    </script>
+    </script> -->
 </body>
 
 </html>
