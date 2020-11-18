@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printarto</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <nav class="header">
+        <div class="bg-primary py-4">
+
+        </div>
+        <div class="header__top-bar">
+
+        </div>
+        <div class="header__search-bar">
+
+        </div>
+        <div class="header__menu-bar">
+
+        </div>
+    </nav>
+
+
+    <section id="print__arto" class="printarto">
+        <div class="container mx-auto h-full">
+            <div class="printarto__container rounded h-full shadow">
+                <div class="w-full lg:w-1/2 px-3 bg-primary position-relative">
+                    <div class="bg-placeholder"></div>
+                </div>
+                <div class="w-full lg:w-1/2 px-3 printarto__control">
+                    <label class="switch mb-4">
+                        <input id="switch__print" type="checkbox" value="true">
+                        <span class="slider round">
+                            <span class="slider__content">
+                                <span id="print__type">NORMAL PRINT</span>
+                            </span>
+                        </span>
+                        <span class="lhs-name">NORMAL PRINT</span>
+                        <span class="rhs-name">DIGITAL PRINT</span>
+                    </label>
+                    <div class="col-12 py-3">
+                        <div class="drop__img">
+                            <img class="drop__tumbnail" src="../assets/course-tumb 1.png" alt="">
+                            <input type="file" name="" id="">
+                            <div class="drop__detail">
+                                <span class="w-full block text-center">Drop your files here.</span>
+                                <span class="text-danger font-bold">or Browse</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap px-3" id="tabs-id">
+                        <div class="w-full">
+                            <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+                                <li class="-mb-px last:mr-0 flex-auto text-center">
+                                    <a class="text-decoration-0 text-xs font-bold uppercase px-5 py-3 shadow block leading-normal text-white bg-primary cursor-pointer"
+                                        onclick="changeAtiveTab(event,'tab-profile')">
+                                        Profile
+                                    </a>
+                                </li>
+                                <li class="-mb-px  last:mr-0 flex-auto text-center">
+                                    <a class="text-decoration-0 text-xs font-bold uppercase px-5 py-3 shadow block leading-normal text-primary bg-white cursor-pointer"
+                                        onclick="changeAtiveTab(event,'tab-settings')">
+                                        Settings
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="relative flex flex-col min-w-0 break-wordsw-full mb-6  rounded">
+                                <div class=" flex-auto">
+                                    <div class="tab-content tab-space">
+                                        <div class="block" id="tab-profile">
+                                            <div class="flex justify-between px-3 mb-3">
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" class="form-radio" name="accountType"
+                                                        value="busines">
+                                                    <span class="ml-2">6" x 4"</span>
+                                                </label>
+                                                <span>₹49</span>
+                                            </div>
+                                            <div class="flex justify-between px-3 mb-3">
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" class="form-radio" name="accountType"
+                                                        value="busines">
+                                                    <span class="ml-2">A3</span>
+                                                </label>
+                                                <span>₹49</span>
+                                            </div>
+                                            <div class="flex justify-between px-3 mb-3">
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" class="form-radio" name="accountType"
+                                                        value="busines">
+                                                    <span class="ml-2">A4</span>
+                                                </label>
+                                                <span>₹49</span>
+                                            </div>
+                                            <div class="flex justify-between align-items-center px-3 mb-3">
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" class="form-radio" name="accountType"
+                                                        value="busines">
+                                                    <span class="px-0 mx-2 col">Custom Size</span>
+                                                    <select
+                                                        class="block appearance-none bg-gray-200 border border-gray-200 text-gray-700 p-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                                        id="grid-state">
+                                                        <option>64" x 40"</option>
+                                                        <option>64" x 40"</option>
+                                                        <option>64" x 40"</option>
+                                                    </select>
+                                                </label>
+                                                <span>₹49</span>
+                                            </div>
+                                            <label for="">SELECT FRAME</label>
+                                            <div class="flex justify-start px-3 my-3">
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" class="form-radio" name="accountType"
+                                                        value="busines" checked>
+                                                    <img class="border p-1 frame-selection"
+                                                        src="../assets/frames/Path 53.png" alt="">
+                                                </label>
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" class="form-radio" name="accountType"
+                                                        value="busines">
+                                                    <img class="border p-1 frame-selection"
+                                                        src="../assets/frames/Path 54.png" alt="">
+                                                </label>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center justify-content-right mt-4">
+                                                <div class="col">
+                                                    <h3 class="font-weight-bold">₹120.00</h3>
+                                                </div>
+                                                <div class="mx-fit-width button-section">
+                                                    <button class="btn btn-outline-danger mr-2">customize</button>
+                                                    <button class="btn btn-danger">checkout</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hidden" id="tab-settings">
+                                            <p>
+                                                Completely synergize resource taxing relationships via
+                                                premier niche markets. Professionally cultivate one-to-one
+                                                customer service with robust ideas.
+                                                <br />
+                                                <br />
+                                                Dynamically innovate resource-leveling customer service for
+                                                state of the art customer service.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container text-center py-4 border-bottom">
+        <h3>WE HELP YOU TO TREASURE MEMORIES</h3>
+        <p class="w-3/4 mx-auto mt-3 mb-5">
+            We thrive to assist you in preserving your special moments forever. Our range of artistic collection
+            includes photo books, acrylic prints, metal prints, Photo pillow, photo calendar, Photo Mugs and many
+            others. Each of the product line ensures you relish the best experience.
+        </p>
+        <h3 class="text-primary font-weight-bold mb-4">CATEGORIES</h3>
+    </div>
+
+
+    <div class="container-fluid mb-5 pb-5 px-0 border-bottom ">
+        <div class="container">
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+                <ul
+                    class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-6@l">
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                    <li class="ml-2">
+                        <img src="../assets/course-tumb 1.png" alt="">
+                        <div class="uk-position-small uk-position-bottom-center uk-panel">
+                            <p class="category-title">Lorem ipsum dolor sit.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                    uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    uk-slider-item="next"></a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 px-0">
+        <div class="container d-flex flex-wrap">
+            <div class="col-xl col-lg-3 col-md-4 col-6 mb-3 text-center">
+                <div class="logo-insta">
+                    <img src="../assets/insta.png" alt="">
+                </div>
+                <label class="social-logo__sup-title">lorem ipsum</label>
+                <label class="social-logo__title">lorem title ipsum</label>
+            </div>
+            <div class="col-xl col-lg-3 col-md-4 col-6 mb-3 text-center">
+                <div class="logo-pexels">
+                    <img src="../assets/pexels.png" alt="">
+                </div>
+                <label class="social-logo__sup-title">lorem ipsum</label>
+                <label class="social-logo__title">lorem title ipsum</label>
+            </div>
+            <div class="col-xl col-lg-3 col-md-4 col-6 mb-3 text-center">
+                <div class="logo-fliker">
+                    <img src="../assets/flickr.png" alt="">
+                </div>
+                <label class="social-logo__sup-title">lorem ipsum</label>
+                <label class="social-logo__title">lorem title ipsum</label>
+            </div>
+            <div class="col-xl col-lg-3 col-md-4 col-6 mb-3 text-center">
+                <div class="logo-fb">
+                    <img src="../assets/fb.png" alt="">
+                </div>
+                <label class="social-logo__sup-title">lorem ipsum</label>
+                <label class="social-logo__title">lorem title ipsum</label>
+            </div>
+            <div class="col-xl col-lg-3 col-md-4 col-6 mb-3 text-center">
+                <div class="logo-canva">
+                    <img src="../assets/canva.png" alt="">
+                </div>
+                <label class="social-logo__sup-title">lorem ipsum</label>
+                <label class="social-logo__title">lorem title ipsum</label>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center py-4 mb-5 px-0">
+        <h3 class="text-primary font-weight-bold mb-4">SITE FEATURES</h3>
+
+        <div class="features__section">
+            <div class="d-flex flex-wrap container">
+                <div class="col mb-3">
+                    <div class="circle-white">
+                        <img src="../assets/refund.png" alt="">
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="circle-white">
+                        <img src="../assets/shipping.png" alt="">
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="circle-white">
+                        <img src="../assets/refund-1.png" alt="">
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="circle-white">
+                        <img src="../assets/support.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <img src="../assets/banner.png" alt="">
+    </div>
+    <div class="container d-flex flex-wrap align-items-center pb-4 over-x-hide">
+        <h3 class="mr-4 mb-0 font-weight-bold" for="">ARTIST</h3>
+        <hr class="col m-0 pr-0">
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider>
+
+                    <ul
+                        class="uk-slider-items uk-child-width-1-4 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-6@l">
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-2.jpg" alt="">
+                                    <label for="" class="artist-card__title">Vargese Rony</label>
+                                    <label for="" class="artist-card__subtitle">Australia</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-3.jpg" alt="">
+                                    <label for="" class="artist-card__title">Kann Lorenz</label>
+                                    <label for="" class="artist-card__subtitle">Paris</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-4.jpg" alt="">
+                                    <label for="" class="artist-card__title">Mary Snowman</label>
+                                    <label for="" class="artist-card__subtitle">Englend</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-5.jpg" alt="">
+                                    <label for="" class="artist-card__title">Dona Paramu</label>
+                                    <label for="" class="artist-card__subtitle">India</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar.jpg" alt="">
+                                    <label for="" class="artist-card__title">Ramanan Potty</label>
+                                    <label for="" class="artist-card__subtitle">America</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-5.jpg" alt="">
+                                    <label for="" class="artist-card__title">Deena Paramu</label>
+                                    <label for="" class="artist-card__subtitle">India</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-2.jpg" alt="">
+                                    <label for="" class="artist-card__title">Vargese Rony</label>
+                                    <label for="" class="artist-card__subtitle">Australia</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-3.jpg" alt="">
+                                    <label for="" class="artist-card__title">Kann Lorenz</label>
+                                    <label for="" class="artist-card__subtitle">Paris</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-4.jpg" alt="">
+                                    <label for="" class="artist-card__title">Mary Snowman</label>
+                                    <label for="" class="artist-card__subtitle">Englend</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-5.jpg" alt="">
+                                    <label for="" class="artist-card__title">Dona Paramu</label>
+                                    <label for="" class="artist-card__subtitle">India</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar.jpg" alt="">
+                                    <label for="" class="artist-card__title">Ramanan Potty</label>
+                                    <label for="" class="artist-card__subtitle">America</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-12 mb-3 px-2">
+                                <div class="artist-card p-1">
+                                    <img class="mx-auto w-100 mb-2" src="../assets/avatar-5.jpg" alt="">
+                                    <label for="" class="artist-card__title">Deena Paramu</label>
+                                    <label for="" class="artist-card__subtitle">India</label>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                    <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                 -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container d-flex flex-wrap align-items-center pb-5">
+        <h3 class="mr-4 mb-0 text-primary font-weight-bold" for="">SHOP BY DEPARTMENT</h3>
+        <hr class="col m-0 pr-0 d-md-block d-none">
+        <div class="d-flex flex-wrap mt-3 w-100 row m-0">
+            <div class="col-md-6 pr-0 px-0 pl-md-3">
+                <div class="department-card">
+                    <img src="../assets/Rectangle 311.png" alt="">
+                    <div class="department-card__info">
+                        <label class="font-semibold" for="">Abstract</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 pr-0 px-0 pl-md-3">
+                <div class="department-card">
+                    <img src="../assets/Rectangle 314.png" alt="">
+                    <div class="department-card__info">
+                        <label class="font-semibold" for="">Modern</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 pr-0 px-0 pl-md-3">
+                <div class="department-card">
+                    <img src="../assets/Rectangle 314.png" alt="">
+                    <div class="department-card__info">
+                        <label class="font-semibold" for="">Realism</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 pr-0 px-0 pl-md-3">
+                <div class="department-card">
+                    <img src="../assets/Rectangle 314.png" alt="">
+                    <div class="department-card__info">
+                        <label class="font-semibold" for="">Pop art</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 pr-0 px-0 pl-md-3">
+                <div class="department-card">
+                    <img src="../assets/Rectangle 314.png" alt="">
+                    <div class="department-card__info">
+                        <label class="font-semibold" for="">Portrait</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pr-0 px-0 pl-md-3">
+                <div class="department-card">
+                    <img src="../assets/Rectangle 311.png" alt="">
+                    <div class="department-card__info">
+                        <label class="font-semibold" for="">Wall Art</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid bg-testimonial">
+        <h3 class="mr-4 mb-0 text-primary font-weight-bold text-center" for="">TESTIMONIAL</h3>
+        <div class="px-md-0 px-3" uk-slider="center: true">
+
+            <div class="uk-position-relative uk-visible-toggle mt-4" tabindex="-1">
+
+                <ul class="uk-slider-items uk-child-width-1-2@s uk-grid testimonial-slider">
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-2.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Mandrik Jhonson</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-4.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Kora Agustine</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-4.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Kora Agustine</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-4.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Kora Agustine</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-4.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Kora Agustine</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-4.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Kora Agustine</h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="position-relative">
+                        <div class="testimonial-item">
+                            <img src="../assets/qoutes.svg" alt="">
+                        </div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img class="rounded-img" src="../assets/avatar-4.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    We thrive to assist you in preserving your special moments forever. Our range of
+                                    artistic collection includes photo books, acrylic prints, metal prints, Photo
+                                    pillow, photo calendar, Photo Mugs and many others. Each of the product line ensures
+                                    you relish the best experience.
+                                </p>
+                                <h3 class="uk-card-title text-primary font-weight-bold mt-3">Kora Agustine</h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                    uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    uk-slider-item="next"></a>
+
+            </div>
+
+            <!-- <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
+
+        </div>
+    </div>
+
+    <footer class="pt-5">
+        <div class="container-fluid footer-1 px-0 py-5">
+            <div class="container">
+                <div class="d-flex flex-wrap">
+                    <div class="col-md mb-3">
+                        <img class="logo-footer" src="../assets/white.png" alt="">
+                        <ul class="d-flex flex-wrap p-0">
+                            <a class="text-white w-100 footer__link " [routerLink]="['/home/commingsoon']"
+                                routerLinkActive="link-active">
+                                <li class="nav-link pl-0 pb-0 small">About Us</li>
+                            </a>
+                            <a class="text-white w-100 footer__link " [routerLink]="['/home/commingsoon']"
+                                routerLinkActive="link-active">
+                                <li class="nav-link pl-0 pb-0 small">Refer & Earn</li>
+                            </a>
+                            <a class="text-white w-100 footer__link " [routerLink]="['/home/commingsoon']"
+                                routerLinkActive="link-active">
+                                <li class="nav-link pl-0 pb-0 small">Work from home </li>
+                            </a>
+                            <a class="text-white w-100 footer__link " [routerLink]="['/home/commingsoon']"
+                                routerLinkActive="link-active">
+                                <li class="nav-link pl-0 pb-0 small">Digital marketing internship</li>
+                            </a>
+                            <a class="text-white w-100 footer__link " [routerLink]="['/home/commingsoon']"
+                                routerLinkActive="link-active">
+                                <li class="nav-link pl-0 pb-0 small">Franchisee</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="col-md mb-3 newsletter-container">
+                        <label class="text-white w-100 mb-md-4 mb-2" for="">Newsletter</label>
+                        <p class="small text-light my-0 newsletter pb-1">Stay updated with our latest trends.</p>
+                        <div class="form-group position-relative mb-0 subscribe-input">
+                            <input type="email" class="form-control" placeholder="Enter email address">
+                            <button class="btn-primary rounded btn-send">
+                                <span uk-icon="icon: chevron-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md mb-3">
+                        <label class="text-white w-100 " for="">Contact</label>
+                        <div class="d-flex flex-wrap justify-content-center align-items-start">
+                            <div class="col px-0">
+                                <label class="footer-info mt-3 d-flex align-items-start " for="">
+                                    <span class="footer-icon" uk-icon="location"></span>
+                                    <label for="">Jags Furniture, Vyttila, Kochi - 682019.</label>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap align-items-start justify-content-center">
+                            <div class="col px-0">
+                                <label class="footer-info" for="">
+                                    <span class="footer-icon" uk-icon="mail"></span>
+                                    <label for="">info@printarto.com</label>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap align-items-start justify-content-center">
+                            <div class="col px-0">
+                                <label class="footer-info d-flex align-items-start" for="">
+                                    <span class="footer-icon" uk-icon="receiver"></span>
+                                    <label for="">+91 892 174 6526</label>
+                                </label>
+                            </div>
+                        </div>
+                        <ul class="nav mt-0">
+                            <li class="nav-item">
+                                <a class="nav-link px-0 mr-3 text-white" href="#"><img
+                                        src="../../../assets/image/fb.png" alt=""></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-0 mr-3 text-white" href="#"><img
+                                        src="../../../assets/image/whatapp.png" alt=""></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-0 mr-3 text-white" href="#"><img
+                                        src="../../../assets/image/twiter.png" alt=""></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-0 mr-3 text-white" href="#"><img
+                                        src="../../../assets/image/insta.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex w-100 align-items-start justify-content-center px-3 flex-wrap">
+                <a class="text-light mx-4 py-md-3 pb-2 pointer" href="/home/termsandconditions">
+                    <li class="nav-link pl-0 pb-0 small">Terms & Conditions</li>
+                </a>
+                <a class="text-light mx-4 py-md-3 pb-2 pointer" href="/home/privacypolicy">
+                    <li class="nav-link pl-0 pb-0 small">Privacy Policy</li>
+                </a>
+                <a class="text-light mx-4 py-md-3 pb-2 pointer" href="/home/returnpolicy">
+                    <li class="nav-link pl-0 pb-0 small">Return Policy</li>
+                </a>
+                <a class="text-light mx-4 py-md-3 pb-2 pointer" href="/home/packagingpolicy">
+                    <li class="nav-link pl-0 pb-0 small">Packaging Policy</li>
+                </a>
+            </div>
+            <div class="copyright-1 px-3">
+                Copyright 2020 All rights reserved | Powered by Cushbu Art Pvt Ltd
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script type="text/javascript">
+        function changeAtiveTab(event, tabID) {
+            let element = event.target;
+            while (element.nodeName !== "A") {
+                element = element.parentNode;
+            }
+            ulElement = element.parentNode.parentNode;
+            aElements = ulElement.querySelectorAll("li > a");
+            tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+            for (let i = 0; i < aElements.length; i++) {
+                aElements[i].classList.remove("text-white");
+                aElements[i].classList.remove("bg-primary");
+                aElements[i].classList.add("text-primary");
+                aElements[i].classList.add("bg-white");
+                tabContents[i].classList.add("hidden");
+                tabContents[i].classList.remove("block");
+            }
+            element.classList.remove("text-primary");
+            element.classList.remove("bg-white");
+            element.classList.add("text-white");
+            element.classList.add("bg-primary");
+            document.getElementById(tabID).classList.remove("hidden");
+            document.getElementById(tabID).classList.add("block");
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const switcher = document.getElementById("switch__print");
+            switcher.addEventListener("change", function (e) {
+                var printvalue = document.getElementById("print__type");
+                if (printvalue.innerText == "NORMAL PRINT") {
+                    printvalue.innerText = "DIGITAL PRINT";
+                } else {
+                    printvalue.innerText = "NORMAL PRINT"
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
