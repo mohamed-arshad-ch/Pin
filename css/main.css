@@ -243,6 +243,76 @@ body {
   background: #CC3433;
 }
 
+.location_pop {
+  padding-top: 15px;
+}
+
+.location_pop h3 {
+  color: #707070;
+  font-size: 20px;
+}
+
+.location_pop .form-group {
+  position: relative;
+}
+
+.location_pop .form-group .form-control {
+  padding-left: 40px;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.location_pop .form-group .location_marker {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #CC3433;
+}
+
+.location_pop .location-results {
+  width: 100%;
+  max-height: 150px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.location_pop .location-results__item:hover {
+  background: #fbfbfb;
+}
+
+.location_pop .location-results img {
+  padding-right: 10px;
+}
+
+.location_pop .location-results::-webkit-scrollbar {
+  width: 4px;
+}
+
+.location_pop .location-results::-webkit-scrollbar-track {
+  background: #fff0;
+}
+
+.location_pop .location-results::-webkit-scrollbar-thumb {
+  background: #CC3433;
+  border-radius: 20px;
+}
+
+.location_pop .location-results::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .footer {
   background: #040404;
   width: 100%;
