@@ -239,6 +239,10 @@ body {
           box-shadow: 0px 3px 6px #00000026;
 }
 
+.uk-range::-webkit-slider-thumb {
+  background: #CC3433;
+}
+
 .footer {
   background: #040404;
   width: 100%;
@@ -500,6 +504,9 @@ body {
       flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .printarto____control {
@@ -512,6 +519,27 @@ body {
 
 .printarto__pic-holder {
   min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0px;
+}
+
+.pic-holder__views {
+  width: 100px;
+}
+
+.pic-holder__controler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .switch {
@@ -716,6 +744,9 @@ body {
 
 .category-title {
   font-size: 14px;
+  opacity: 1;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
 }
 
 .logo-insta {
@@ -942,6 +973,12 @@ hr {
   }
   .printarto__container select {
     font-size: 10px;
+  }
+  .category-title {
+    display: none;
+  }
+  .pic-holder__views {
+    width: 60px;
   }
 }
 
