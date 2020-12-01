@@ -1175,8 +1175,7 @@
                     .find('option')
                     .remove()
                     .end()
-                    .append('<option value="">6 X 4</option>')
-                    .val('6 X 4')
+                    
                     ;
                 var reader = new FileReader();
 
@@ -1187,14 +1186,16 @@
                 reader.readAsDataURL(this.files[0]);
                 img.onload = function () {
 
-                    alert("pixsel = " + this.width + " " + this.height);
+                    // alert("pixsel = " + this.width + " " + this.height);
                     var widtcm = (this.width * 2.54) / 300;
                     var heightcm = (this.height * 2.54) / 300;
 
 
                     var widthinch = (widtcm / 2.54).toFixed(0)
                     var heightinch = (heightcm / 2.54).toFixed(0)
-                    for (let index = 5; index < 40; index++) {
+                    var dis = this.height/100;
+                    console.log(dis);
+                    for (let index = 5; index <=dis; index++) {
                         var adr = this.width / this.height;
                         var cm = index * 2.54;
                         var gh = cm * 300;
@@ -1205,9 +1206,13 @@
                         var fhfh = gft / 300;
 
                         var incy = fhfh / 2.54;
+
+                        var incycm1 = incy.toFixed(0) * 2.54;
+                        var indexcm = index * 2.54;
+
                         console.log(incy.toFixed(0));
                         if (incy <= 64) {
-                            var html = '<option>' + incy.toFixed(0) + " x " + index + '</option>';
+                            var html = '<option>' + incy.toFixed(0) + " x " + index + "("+incycm1+"cm"+"X"+indexcm+"cm"+")" +'</option>';
                             $('#grid-state').append(html)
                         }
 
@@ -1215,13 +1220,12 @@
 
 
                     }
-                    alert("cm = " + widtcm.toFixed(2) + "  " + heightcm.toFixed(2))
-                    alert("inch = " + (widtcm / 2.54).toFixed(2) + "  " + (heightcm / 2.54).toFixed(2))
+                    
                     if (widthinch >= 6 && heightinch >= 4) {
-                        $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"')
+                        $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' +" (" + widtcm.toFixed(0)+"cm" +" X "  + heightcm.toFixed(0)+"cm" +" )")
                     } else if (widthinch <= 64 && widthinch >= 6) {
                         if (heightinch >= 4) {
-                            $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"')
+                            $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' +" (" + widtcm.toFixed(0)+"cm" +" X "  + heightcm.toFixed(0)+"cm" +" )")
                         } else {
                             $('#imagevalidresult').text("InValid Image : " + widthinch + '"' + " X " + heightinch + '"')
                         }
