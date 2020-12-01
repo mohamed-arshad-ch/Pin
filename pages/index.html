@@ -224,8 +224,14 @@
                         </div>
                     </div>
                     <div class="col pic-holder__controler">
-                        <div class="col-12 px-0 mb-3">
-                            <img class="w-100" src="../assets/avatar-3.jpg" alt="">
+                        <div class="col-12 px-0 mb-3"
+                            style="background: url('https://d23374kzy6ad81.cloudfront.net/assets/art_wall_bg_without_sofa-c2d689322d7da632cb604808cb2a6d99.jpg') 0% 0% / 100% 91.4% no-repeat rgb(255, 255, 255);">
+                            <div id="gty" class="firstview qvimg"
+                                style="height: 100%; padding-left: 0px; min-height: 400.208px;">
+                                <img class="shadow" id="thumb-artimage" src="../assets/avatar-3.jpg" style=" cursor: default; width: 80px; height:50px; display: inline-block; margin:
+                                    15%; top: 64.8959px;">
+                            </div>
+                            <!-- <img  src="https://d23374kzy6ad81.cloudfront.net/assets/art_wall_bg_without_sofa-c2d689322d7da632cb604808cb2a6d99.jpg" alt=""> -->
                         </div>
                         <div class="col-12 px-0 d-flex">
                             <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
@@ -383,9 +389,7 @@
                                                     <select
                                                         class="block appearance-none bg-gray-200 border border-gray-200 text-gray-700 p-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                         id="grid-state">
-                                                        <option>64" x 40"</option>
-                                                        <option>64" x 40"</option>
-                                                        <option>64" x 40"</option>
+
                                                     </select>
                                                 </label>
                                                 <span>₹49</span>
@@ -1163,7 +1167,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
         var _URL = window.URL || window.webkitURL;
-
+        var imaf;
         $("#imagefile").change(function (e) {
             var file, img;
 
@@ -1175,27 +1179,33 @@
                     .find('option')
                     .remove()
                     .end()
-                    
+
                     ;
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
+
                     $('.drop__tumbnail').attr('src', e.target.result);
                 }
 
                 reader.readAsDataURL(this.files[0]);
+
+
+                var imaf = URL.createObjectURL(event.target.files[0]);
+                $("#thumb-artimage").fadeIn("fast").attr('src', imaf);
+
                 img.onload = function () {
 
-                    // alert("pixsel = " + this.width + " " + this.height);
+
                     var widtcm = (this.width * 2.54) / 300;
                     var heightcm = (this.height * 2.54) / 300;
 
 
                     var widthinch = (widtcm / 2.54).toFixed(0)
                     var heightinch = (heightcm / 2.54).toFixed(0)
-                    var dis = this.height/100;
-                    console.log(dis);
-                    for (let index = 5; index <=dis; index++) {
+                    var dis = this.height / 100;
+
+                    for (let index = 5; index <= dis; index++) {
                         var adr = this.width / this.height;
                         var cm = index * 2.54;
                         var gh = cm * 300;
@@ -1210,9 +1220,9 @@
                         var incycm1 = incy.toFixed(0) * 2.54;
                         var indexcm = index * 2.54;
 
-                        console.log(incy.toFixed(0));
+
                         if (incy <= 64) {
-                            var html = '<option>' + Math.ceil(incy) + " x " + index + "("+Math.ceil(incycm1)+"cm"+"X"+Math.ceil(indexcm)+"cm"+")" +'</option>';
+                            var html = '<option id="opt" value="' + Math.ceil(incy) + "x" + index + '">' + Math.ceil(incy) + " x " + index + "(" + Math.ceil(incycm1) + "cm" + "X" + Math.ceil(indexcm) + "cm" + ")" + '</option>';
                             $('#grid-state').append(html)
                         }
 
@@ -1220,12 +1230,12 @@
 
 
                     }
-                    
+
                     if (widthinch >= 6 && heightinch >= 4) {
-                        $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' +" (" + widtcm.toFixed(0)+"cm" +" X "  + heightcm.toFixed(0)+"cm" +" )")
+                        $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' + " (" + widtcm.toFixed(0) + "cm" + " X " + heightcm.toFixed(0) + "cm" + " )")
                     } else if (widthinch <= 64 && widthinch >= 6) {
                         if (heightinch >= 4) {
-                            $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' +" (" + widtcm.toFixed(0)+"cm" +" X "  + heightcm.toFixed(0)+"cm" +" )")
+                            $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' + " (" + widtcm.toFixed(0) + "cm" + " X " + heightcm.toFixed(0) + "cm" + " )")
                         } else {
                             $('#imagevalidresult').text("InValid Image : " + widthinch + '"' + " X " + heightinch + '"')
                         }
@@ -1242,7 +1252,37 @@
 
             }
 
+            imaf = document.getElementById('imagefile').value;
+
+
+
+
         });
+
+
+        $("#grid-state").change(function () {
+            var wid = $(this).find(':selected').val();
+
+
+            var parts = wid.split('x');
+            var widthp = parseInt(parts[0], 10);
+            var heightp = parseInt(parts[1], 10);
+
+
+            mewi = (widthp * 2.54) * 2;
+            mehei = (heightp * 2.54) * 2;
+
+            $('#thumb-artimage').width(mewi);
+            $('#thumb-artimage').height(mehei);
+
+
+
+
+
+
+        });
+
+
     </script>
 </body>
 
