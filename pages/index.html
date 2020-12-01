@@ -1212,7 +1212,7 @@
 
                         console.log(incy.toFixed(0));
                         if (incy <= 64) {
-                            var html = '<option>' + incy.toFixed(0) + " x " + index + "("+incycm1.toFixed(0)+"cm"+"X"+indexcm.toFixed(0)+"cm"+")" +'</option>';
+                            var html = '<option>' + Math.ceil(incy) + " x " + index + "("+Math.ceil(incycm1)+"cm"+"X"+Math.ceil(indexcm)+"cm"+")" +'</option>';
                             $('#grid-state').append(html)
                         }
 
