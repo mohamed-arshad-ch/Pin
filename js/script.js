@@ -573,3 +573,25 @@ framebtn.forEach((btn) => {
     })
 
 });
+
+const onPosition = (position) => {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+
+
+    axios.get('https://api.opencagedata.com/geocode/v1/json?q=' + latitude + '+' + longitude + '&key=4906212d010e4b63938e5334e3205589').then(resp => {
+
+        console.log(resp.data.results[0].formatted);
+    });
+
+
+
+}
+const locationError = (errorposition) => {
+    console.log(errorposition);
+}
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onPosition, locationError)
+}
