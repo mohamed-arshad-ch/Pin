@@ -161,7 +161,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-primary badge-pill small">Upload & Print</button>
+                            <button id="modlebtn" class="btn btn-primary badge-pill small">Upload & Print</button>
                         </li>
                     </ul>
                 </form>
@@ -459,7 +459,8 @@
                                                         value="busines">
                                                     <span class="ml-2">6" x 4"</span>
                                                 </label>
-                                                <span>₹49</span>
+                                                <span class="currencys">49</span>
+                                                
                                             </div>
                                             <div class="flex justify-between px-3 mb-3">
                                                 <label class="inline-flex items-center">
@@ -467,7 +468,7 @@
                                                         value="busines">
                                                     <span class="ml-2">A3</span>
                                                 </label>
-                                                <span>₹49</span>
+                                                <span class="currencys">49</span>
                                             </div>
                                             <div class="flex justify-between px-3 mb-3">
                                                 <label class="inline-flex items-center">
@@ -475,7 +476,7 @@
                                                         value="busines">
                                                     <span class="ml-2">A4</span>
                                                 </label>
-                                                <span>₹49</span>
+                                                <span class="currencys">49</span>
                                             </div>
                                             <div class="flex justify-between align-items-center px-3 mb-3">
                                                 <label class="inline-flex items-center">
@@ -488,7 +489,7 @@
 
                                                     </select>
                                                 </label>
-                                                <span>₹49</span>
+                                                <span class="currencys">49</span>
                                             </div>
                                             <label for="">SELECT FRAME</label>
                                             <div class="flex justify-start px-3 my-3">
@@ -499,8 +500,8 @@
                                                         src="../assets/frames/Path 53.png" alt="">
                                                 </label>
                                                 <label class="inline-flex items-center">
-                                                    <input type="radio" class="form-radio" name="frameType"
-                                                        value="grey" id="frameType">
+                                                    <input type="radio" class="form-radio" name="frameType" value="grey"
+                                                        id="frameType">
                                                     <img class="border p-1 frame-selection"
                                                         src="../assets/frames/Path 54.png" alt="">
                                                 </label>
@@ -552,9 +553,10 @@
 
 
     <a class="uk-button uk-button-default mx-auto d-block w-50 my-5 font-weight-bold shadow bg-white py-3"
-        href="#modal-center" uk-toggle>Modal Pop Location</a>
+        href="#myModal" uk-toggle>Modal Pop Location</a>
+       
 
-    <div id="modal-center" class="uk-flex-top" uk-modal>
+    <div id="myModal" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded">
 
             <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -562,12 +564,13 @@
             <div class="location_pop">
                 <h3>Select your Delivery Location</h3>
                 <div class="form-group mt-4 mb-2">
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                    <input type="text" class="form-control" id="mylo" placeholder="" autocomplete="on" runat="server">
+                    
                     <span class="location_marker" uk-icon="icon: location"></span>
                 </div>
 
                 <div class="location-results">
-                    <div class="col-12 d-flex py-2 border-bottom">
+                    <div id="detectloc" class="col-12 d-flex py-2 border-bottom">
                         <img src="../assets/Icon material-gps-fixed.svg" alt="">
                         <span class="text-primary">Detect Location</span>
                     </div>
@@ -1208,12 +1211,18 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDKGypfgob9RT1ZGiGjy_vlg3R6_gknO9M"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js"></script>
+    <!-- <script src="../js/jquery.bpopup.min.js"></script> -->
     <script src="../js/script.js"></script>
+    
     <script type="text/javascript">
         function changeAtiveTab(event, tabID) {
             let element = event.target;
@@ -1260,13 +1269,8 @@
     </script> -->
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
-    <script>
-        
-   
-    </script>
+
+
 </body>
 
 </html>

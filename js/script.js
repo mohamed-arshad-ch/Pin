@@ -193,12 +193,48 @@ $('#imgew1').click(() => {
 
 });
 
+
+
+function initialize() {
+    var input = document.getElementById('mylo');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        console.log(place.name);
+        // document.getElementById('cityLat').value = place.geometry.location.lat();
+        // document.getElementById('cityLng').value = place.geometry.location.lng();
+    });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
 $(document).ready(() => {
+    // $('#modal-center').show()
+
     $('#ui').hide()
     $('#ui1').hide()
     $('#ui2').hide()
     $('#ui3').hide()
+    var modal = UIkit.modal('#myModal', { 'bgClose': false });
+    console.log(modal);
+    modal.toggle();
+
+
+
+
+});
+
+$('#fdddd').click(() => {
+
 })
+$('#fg').click(() => {
+    $("#myModal").modal('show');
+})
+
+// $('#').on('click', function() {
+//   modal.toggle();
+// });
+
+
 var cou1 = 0;
 var cou2 = 0;
 var cou3 = 0;
@@ -574,24 +610,58 @@ framebtn.forEach((btn) => {
 
 });
 
-const onPosition = (position) => {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
+var currrensies;
+
+
+$('#detectloc').click(() => {
+
+    const onPosition = (position) => {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
 
 
 
-    axios.get('https://api.opencagedata.com/geocode/v1/json?q=' + latitude + '+' + longitude + '&key=4906212d010e4b63938e5334e3205589').then(resp => {
+        axios.get('https://api.opencagedata.com/geocode/v1/json?q=' + latitude + '+' + longitude + '&key=4906212d010e4b63938e5334e3205589').then(resp => {
+            console.log(resp.data);
+            console.log(resp.data.results[0].formatted);
+            var country = resp.data.results[0].components.country;
+            console.log(country);
+            $('#mylo').val(resp.data.results[0].formatted)
+           
+            axios.get('https://restcountries.eu/rest/v2/').then(res => {
 
-        console.log(resp.data.results[0].formatted);
-    });
+                for (let index = 0; index < res.data.length; index++) {
+                    
+
+                    if (res.data[index].name == country){
+                        console.log(res.data[index].currencies[0].symbol);
+                        const curspan = document.querySelectorAll('.currencys');
+                        console.log(curspan);
+                        curspan.forEach((val)=>{
+                            $(val).text(res.data[index].currencies[0].symbol)
+                        })
+                    }
+                    
+                }
+            })
+
+
+        }).then(sym => {
+
+        })
 
 
 
-}
-const locationError = (errorposition) => {
-    console.log(errorposition);
-}
+    }
+    const locationError = (errorposition) => {
+        console.log(errorposition);
+    }
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onPosition, locationError)
-}
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(onPosition, locationError)
+    }
+
+})
+
+
+
