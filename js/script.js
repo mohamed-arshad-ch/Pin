@@ -118,9 +118,9 @@ $("#grid-state").change(function () {
     var parts = wid.split('x');
     var widthp = parseInt(parts[0], 10);
     var heightp = parseInt(parts[1], 10);
-    sqinch = heightp*widthp;
+    sqinch = heightp * widthp;
     phototot = sqinch * 1.319;
-    var price = Math.ceil((heightp*widthp*phototot)+(sqinch*(8+(2*heightp)+(2*widthp)))*5);
+    var price = Math.ceil((heightp * widthp * phototot) + (sqinch * (8 + (2 * heightp) + (2 * widthp))) * 5);
     console.log(price);
     console.log(currsym);
     $('#customesize').text(currsym+price)
@@ -211,7 +211,8 @@ function initialize() {
     });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
-
+var ips;
+var co;
 $(document).ready(() => {
     // $('#modal-center').show()
 
@@ -220,8 +221,45 @@ $(document).ready(() => {
     $('#ui2').hide()
     $('#ui3').hide()
     var modal = UIkit.modal('#myModal', { 'bgClose': false });
-    console.log(modal);
+
     modal.toggle();
+
+    axios.get('https://api.ipify.org/?format=json').then(resp => {
+        console.log(resp.data.ip);
+        ips = resp.data.ip;
+    }).then(rt => {
+
+        ipurl = 'http://api.ipstack.com/' + ips + '?access_key=fa17b668b668976cbf394a899dd97b29';
+        axios.get(ipurl).then(res => {
+            console.log(res.data);
+            co = res.data.country_name;
+            console.log(co);
+        }).then(tar => {
+
+            axios.get('https://restcountries.eu/rest/v2/').then(res => {
+
+                for (let index = 0; index < res.data.length; index++) {
+
+
+                    if (res.data[index].name == co) {
+                        console.log(res.data[index].currencies[0].symbol);
+                        const curspan = document.querySelectorAll('.currencys');
+                        console.log(curspan);
+                        curspan.forEach((val) => {
+                            currsym = res.data[index].currencies[0].symbol;
+                            $(val).text(res.data[index].currencies[0].symbol + "0")
+                        })
+                    }
+
+                }
+            })
+
+        })
+
+    })
+
+
+
 
 
 
@@ -632,24 +670,10 @@ $('#detectloc').click(() => {
             var country = resp.data.results[0].components.country;
             console.log(country);
             $('#mylo').val(resp.data.results[0].formatted)
-           
-            axios.get('https://restcountries.eu/rest/v2/').then(res => {
 
-                for (let index = 0; index < res.data.length; index++) {
-                    
 
-                    if (res.data[index].name == country){
-                        console.log(res.data[index].currencies[0].symbol);
-                        const curspan = document.querySelectorAll('.currencys');
-                        console.log(curspan);
-                        curspan.forEach((val)=>{
-                            currsym = res.data[index].currencies[0].symbol;
-                            $(val).text(res.data[index].currencies[0].symbol+"0")
-                        })
-                    }
-                    
-                }
-            })
+
+
 
 
         }).then(sym => {
