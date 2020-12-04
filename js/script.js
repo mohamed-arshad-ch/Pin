@@ -224,7 +224,40 @@ $(document).ready(() => {
 
     modal.toggle();
 
-   
+    axios.get('https://api.ipify.org/?format=json').then(resp => {
+        console.log(resp.data.ip);
+        ips = resp.data.ip;
+    }).then(rt => {
+
+        ipurl = 'https://ipapi.co/'+ ips +'/json/';
+        console.log(ipurl);
+        axios.get(ipurl).then(res => {
+            console.log(res.data);
+            co = res.data.country_name;
+            console.log(co);
+        }).then(tar => {
+
+            axios.get('https://restcountries.eu/rest/v2/').then(res => {
+
+                for (let index = 0; index < res.data.length; index++) {
+
+
+                    if (res.data[index].name == co) {
+                        console.log(res.data[index].currencies[0].symbol);
+                        const curspan = document.querySelectorAll('.currencys');
+                        console.log(curspan);
+                        curspan.forEach((val) => {
+                            currsym = res.data[index].currencies[0].symbol;
+                            $(val).text(res.data[index].currencies[0].symbol + "0")
+                        })
+                    }
+
+                }
+            })
+
+        })
+
+    })
 
 
 
