@@ -230,6 +230,7 @@ $(document).ready(() => {
     }).then(rt => {
 
         ipurl = 'https://ipapi.co/'+ ips +'/json/';
+        console.log(ipurl);
         axios.get(ipurl).then(res => {
             console.log(res.data);
             co = res.data.country_name;
