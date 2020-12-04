@@ -229,7 +229,7 @@ $(document).ready(() => {
         ips = resp.data.ip;
     }).then(rt => {
 
-        ipurl = 'http://api.ipstack.com/' + ips + '?access_key=fa17b668b668976cbf394a899dd97b29';
+        ipurl = 'https://ipapi.co/'+ ips +'/json/';
         axios.get(ipurl).then(res => {
             console.log(res.data);
             co = res.data.country_name;
