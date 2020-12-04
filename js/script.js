@@ -110,7 +110,7 @@ $("#imagefile").change(function (e) {
 
 });
 
-
+var currsym;
 $("#grid-state").change(function () {
     var wid = $(this).find(':selected').val();
 
@@ -118,7 +118,12 @@ $("#grid-state").change(function () {
     var parts = wid.split('x');
     var widthp = parseInt(parts[0], 10);
     var heightp = parseInt(parts[1], 10);
-
+    sqinch = heightp*widthp;
+    phototot = sqinch * 1.319;
+    var price = Math.ceil((heightp*widthp*phototot)+(sqinch*(8+(2*heightp)+(2*widthp)))*5);
+    console.log(price);
+    console.log(currsym);
+    $('#customesize').text(currsym+price)
 
     mewi = (widthp * 2.54) * 2;
     mehei = (heightp * 2.54) * 2;
@@ -638,7 +643,8 @@ $('#detectloc').click(() => {
                         const curspan = document.querySelectorAll('.currencys');
                         console.log(curspan);
                         curspan.forEach((val)=>{
-                            $(val).text(res.data[index].currencies[0].symbol)
+                            currsym = res.data[index].currencies[0].symbol;
+                            $(val).text(res.data[index].currencies[0].symbol+"0")
                         })
                     }
                     
