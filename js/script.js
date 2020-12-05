@@ -23,7 +23,7 @@ $("#imagefile").change(function (e) {
         reader.readAsDataURL(this.files[0]);
 
 
-        var imaf = URL.createObjectURL(event.target.files[0]);
+        var imaf = URL.createObjectURL(e.target.files[0]);
         $("#thumb-artimage1").fadeIn("fast").attr('src', imaf);
         $("#thumb-artimage2").fadeIn("fast").attr('src', imaf);
         $("#thumb-artimage3").fadeIn("fast").attr('src', imaf);
@@ -81,16 +81,33 @@ $("#imagefile").change(function (e) {
 
 
             }
-
+            var tot = 0;
             if (widthinch >= 6 && heightinch >= 4) {
                 $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' + " (" + widtcm.toFixed(0) + "cm" + " X " + heightcm.toFixed(0) + "cm" + " )")
+                tot = 6 * 4 * 1.319;
+                $('#size1').text(currsym + Math.ceil(tot))
+                $('#tots').text(currsym + Math.ceil(tot))
+
+
             } else if (widthinch <= 64 && widthinch >= 6) {
                 if (heightinch >= 4) {
+                    tot = 6 * 4 * 1.319;
+                    $('#size1').text(currsym + Math.ceil(tot))
+                    $('#tots').text(currsym + Math.ceil(tot))
+
                     $('#imagevalidresult').text("Valid Image : " + widthinch + '"' + " X " + heightinch + '"' + " (" + widtcm.toFixed(0) + "cm" + " X " + heightcm.toFixed(0) + "cm" + " )")
                 } else {
+                    tot = 6 * 4 * 1.319;
+                    $('#size1').text(currsym + Math.ceil(tot))
+                    $('#tots').text(currsym + Math.ceil(tot))
+
                     $('#imagevalidresult').text("InValid Image : " + widthinch + '"' + " X " + heightinch + '"')
                 }
             } else {
+                tot = 6 * 4 * 1.319;
+                $('#size1').text(currsym + Math.ceil(tot))
+                $('#tots').text(currsym + Math.ceil(tot))
+
                 $('#imagevalidresult').text("InValid Image : " + widthinch + '"' + " X " + heightinch + '"')
             }
 
@@ -113,17 +130,22 @@ $("#imagefile").change(function (e) {
 var currsym;
 $("#grid-state").change(function () {
     var wid = $(this).find(':selected').val();
-
+    var totprice = 0
 
     var parts = wid.split('x');
     var widthp = parseInt(parts[0], 10);
     var heightp = parseInt(parts[1], 10);
-    sqinch = heightp * widthp;
-    phototot = sqinch * 1.319;
-    var price = Math.ceil((heightp * widthp * phototot) + (sqinch * (8 + (2 * heightp) + (2 * widthp))) * 5);
-    console.log(price);
-    console.log(currsym);
-    $('#customesize').text(currsym+price)
+    sqinch = heightp * widthp * 1.319;
+
+    // var frame = widthp*heightp;
+    // var cb = ( frame* (8 + (2 * heightp) + (2 * widthp)))
+    // console.log(frame,cb);
+    // var price = Math.ceil((frame+cb)   * 5);
+    // console.log(price);
+    // console.log(currsym);
+    $('#customesize').text(currsym + Math.ceil(sqinch))
+    $('#tots').text(currsym + Math.ceil(sqinch))
+
 
     mewi = (widthp * 2.54) * 2;
     mehei = (heightp * 2.54) * 2;
@@ -216,20 +238,27 @@ var co;
 $(document).ready(() => {
     // $('#modal-center').show()
 
+    $('#grid-state').prop('disabled', true);
     $('#ui').hide()
     $('#ui1').hide()
     $('#ui2').hide()
     $('#ui3').hide()
-    var modal = UIkit.modal('#myModal', { 'bgClose': false });
 
+
+    var modal = UIkit.modal('#myModal', { 'bgClose': false });
     modal.toggle();
+
+
+
+
+
 
     axios.get('https://api.ipify.org/?format=json').then(resp => {
         console.log(resp.data.ip);
         ips = resp.data.ip;
     }).then(rt => {
 
-        ipurl = 'https://ipapi.co/'+ ips +'/json/';
+        ipurl = 'https://ipapi.co/' + ips + '/json/';
         console.log(ipurl);
         axios.get(ipurl).then(res => {
             console.log(res.data);
@@ -246,7 +275,10 @@ $(document).ready(() => {
                         console.log(res.data[index].currencies[0].symbol);
                         const curspan = document.querySelectorAll('.currencys');
                         console.log(curspan);
+                        console.log(res.data[index].alpha3Code);
+                        $('#lang').text(`${res.data[index].alpha3Code} | ENGLISH`)
                         curspan.forEach((val) => {
+
                             currsym = res.data[index].currencies[0].symbol;
                             $(val).text(res.data[index].currencies[0].symbol + "0")
                         })
@@ -653,6 +685,40 @@ framebtn.forEach((btn) => {
     })
 
 });
+
+const sizetypebtn = document.querySelectorAll('#sizetype')
+
+sizetypebtn.forEach((size) => {
+    size.addEventListener('click', () => {
+        const datad = size.value;
+        console.log(datad);
+
+        if (datad == "a4") {
+
+            tot = 8.3 * 11.7 * 1.319;
+            $('#size3').text(currsym + Math.ceil(tot))
+            $('#tots').text(currsym + Math.ceil(tot))
+            $('#grid-state').prop('disabled', true);
+
+
+        } else if (datad == "a3") {
+            tot = 16.5 * 11.7 * 1.319;
+            $('#size2').text(currsym + Math.ceil(tot))
+            $('#tots').text(currsym + Math.ceil(tot))
+            $('#grid-state').prop('disabled', true);
+        } else if (datad == "cs") {
+            $('#grid-state').prop('disabled', false);
+
+
+        } else if (datad == "s6") {
+            tot = 6 * 4 * 1.319;
+            $('#size1').text(currsym + Math.ceil(tot))
+            $('#tots').text(currsym + Math.ceil(tot))
+            $('#grid-state').prop('disabled', true);
+
+        }
+    })
+})
 
 var currrensies;
 
